@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81EA63A2-1FEF-4620-9FA8-B56AE8FE3EBB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjectCourse_SystemManagementClothes</RootNamespace>
+    <AssemblyName>ProjectCourse_SystemManagementClothes</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.102.2.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.102.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XLParser, Version=1.5.2.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\XLParser.1.5.2\lib\net461\XLParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DetailForm\PrintImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailForm\PrintImport.Designer.cs">
+      <DependentUpon>PrintImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeSystem\About_VOGUE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeSystem\About_VOGUE.Designer.cs">
+      <DependentUpon>About_VOGUE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailForm\ArrangeCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailForm\ArrangeCus.Designer.cs">
+      <DependentUpon>ArrangeCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailForm\ArrangePro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailForm\ArrangePro.Designer.cs">
+      <DependentUpon>ArrangePro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailForm\CustomersDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailForm\CustomersDetail.Designer.cs">
+      <DependentUpon>CustomersDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailForm\DetailDebt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailForm\DetailDebt.Designer.cs">
+      <DependentUpon>DetailDebt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailForm\GaveMoney.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailForm\GaveMoney.Designer.cs">
+      <DependentUpon>GaveMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailForm\InvoiceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailForm\InvoiceDetail.Designer.cs">
+      <DependentUpon>InvoiceDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Prepaymoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\Prepaymoney.Designer.cs">
+      <DependentUpon>Prepaymoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailForm\ProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailForm\ProductDetail.Designer.cs">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailForm\ReceiveMoney.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailForm\ReceiveMoney.Designer.cs">
+      <DependentUpon>ReceiveMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\SaleInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\SaleInvoice.Designer.cs">
+      <DependentUpon>SaleInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mainfolder\Sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainfolder\Sell.Designer.cs">
+      <DependentUpon>Sell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatitisVOGUE\StatitisRevenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatitisVOGUE\StatitisRevenue.Designer.cs">
+      <DependentUpon>StatitisRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\QuickCreateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\QuickCreateProduct.Designer.cs">
+      <DependentUpon>QuickCreateProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\AddImportBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\AddImportBook.Designer.cs">
+      <DependentUpon>AddImportBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\AddWarehouseBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\AddWarehouseBook.Designer.cs">
+      <DependentUpon>AddWarehouseBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\BaoCaoTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\BaoCaoTonKho.Designer.cs">
+      <DependentUpon>BaoCaoTonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\FormRongImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\FormRongImport.Designer.cs">
+      <DependentUpon>FormRongImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse.Designer.cs">
+      <DependentUpon>Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeSystem\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeSystem\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeSystem\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeSystem\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeSystem\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeSystem\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employer\Employer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employer\Employer.Designer.cs">
+      <DependentUpon>Employer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mainfolder\Statitis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainfolder\Statitis.Designer.cs">
+      <DependentUpon>Statitis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\AddCategoryCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\AddCategoryCustomers.Designer.cs">
+      <DependentUpon>AddCategoryCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AddCategoryProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\AddCategoryProduct.Designer.cs">
+      <DependentUpon>AddCategoryProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\AddCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\AddCustomers.Designer.cs">
+      <DependentUpon>AddCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employer\AddEmployer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employer\AddEmployer.Designer.cs">
+      <DependentUpon>AddEmployer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AddProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\AddProducts.Designer.cs">
+      <DependentUpon>AddProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Customers.Designer.cs">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\Confirm.Designer.cs">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\DeliveryNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\DeliveryNote.Designer.cs">
+      <DependentUpon>DeliveryNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\DetailDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\DetailDelivery.Designer.cs">
+      <DependentUpon>DetailDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Customer\CategoryCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CategoryCustomers.Designer.cs">
+      <DependentUpon>CategoryCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\CategoryProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\CategoryProduct.Designer.cs">
+      <DependentUpon>CategoryProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\ImportBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\ImportBook.Designer.cs">
+      <DependentUpon>ImportBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\WarehouseBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\WarehouseBook.Designer.cs">
+      <DependentUpon>WarehouseBook.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DetailForm\PrintImport.resx">
+      <DependentUpon>PrintImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeSystem\About_VOGUE.resx">
+      <DependentUpon>About_VOGUE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm\ArrangeCus.resx">
+      <DependentUpon>ArrangeCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm\ArrangePro.resx">
+      <DependentUpon>ArrangePro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm\CustomersDetail.resx">
+      <DependentUpon>CustomersDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm\DetailDebt.resx">
+      <DependentUpon>DetailDebt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm\GaveMoney.resx">
+      <DependentUpon>GaveMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm\InvoiceDetail.resx">
+      <DependentUpon>InvoiceDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm\ProductDetail.resx">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm\ReceiveMoney.resx">
+      <DependentUpon>ReceiveMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Customers.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mainfolder\Statitis.resx">
+      <DependentUpon>Statitis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\SaleInvoice.resx">
+      <DependentUpon>SaleInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Prepaymoney.resx">
+      <DependentUpon>Prepaymoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mainfolder\Sell.resx">
+      <DependentUpon>Sell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\QuickCreateProduct.resx">
+      <DependentUpon>QuickCreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatitisVOGUE\StatitisRevenue.resx">
+      <DependentUpon>StatitisRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\AddImportBook.resx">
+      <DependentUpon>AddImportBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\AddWarehouseBook.resx">
+      <DependentUpon>AddWarehouseBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\BaoCaoTonKho.resx">
+      <DependentUpon>BaoCaoTonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\FormRongImport.resx">
+      <DependentUpon>FormRongImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\Warehouse.resx">
+      <DependentUpon>Warehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\AddCategoryCustomers.resx">
+      <DependentUpon>AddCategoryCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\AddCategoryProduct.resx">
+      <DependentUpon>AddCategoryProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\AddCustomers.resx">
+      <DependentUpon>AddCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employer\AddEmployer.resx">
+      <DependentUpon>AddEmployer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\AddProducts.resx">
+      <DependentUpon>AddProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeSystem\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeSystem\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeSystem\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employer\Employer.resx">
+      <DependentUpon>Employer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Customer\CategoryCustomers.resx">
+      <DependentUpon>CategoryCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\CategoryProduct.resx">
+      <DependentUpon>CategoryProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Confirm.resx">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\DeliveryNote.resx">
+      <DependentUpon>DeliveryNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\DetailDelivery.resx">
+      <DependentUpon>DetailDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\ImportBook.resx">
+      <DependentUpon>ImportBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\WarehouseBook.resx">
+      <DependentUpon>WarehouseBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dashboard-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sell-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-order-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clothes-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-employee-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-time-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-employer-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-warehouse-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-debt-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-statistic-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dot-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-arrange-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cells-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-barcode-scanner-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-browser-extensions-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-funnel-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-double-left-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-double-right-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-category-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-download.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-image-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-return-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-upload-image-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-photo-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-download-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-webpage-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{73c11f26-8b7e-4f57-908d-824a14ff5840}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{bbefb995-b04b-47a1-b80d-90112194fe97}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-administrator-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-properties-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer-support-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cart-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wallet-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bolt-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Subfolder\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-copy-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-order-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delivery-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
